@@ -21,10 +21,11 @@ man bash查找Readline Key Bindings一节来看看bash的默认热键
 
 Linux查看文件夹大小du -sh 查看当前文件夹大小
 ```
-du -sh * | sort -n #统计当前文件夹(目录)大小，并按文件大小排序```
+du -sh * | sort -n #统计当前文件夹(目录)大小，并按文件大小排序
 ```
 
 Notepad++中用正则表达式匹配中文 通常正则表达式匹配中文可以利用Unicode的特点，使用[\u4e00-\u9fa5]匹配。但在Notepad++中不能正常使用。 解决方法是，首先将编码转换成Unicode（菜单-&gt;格式-&gt;转换为UTF-8，如果不转换可能匹配出错），然后使用[\x{4e00}-\x{9fa5}]就可以实现匹配中文了。
+```Bash
 android.(text|hint).*[\x{4e00}-\x{9fa5}]+.*
 ```
 
@@ -65,4 +66,61 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
         echo $line, "unmatched"
     fi
 done < "$1"
+```
+
+****
+# 服务器搭建常用命令
+
+```Bash
+pstree -p
+netstat -lntp
+nohup / disown
+pgrep / pkill
+man 7 signal
+```
+
+[Designing Integrated High Quality Linux Applications](http://www.tldp.org/HOWTO/HighQuality-Apps-HOWTO/boot.html "Designing Integrated High Quality Linux Applications")
+```Bash
+#build /etc/init.d/mysystem
+
+service mysystem start
+service mysystem status
+service mysystem reload
+service mysystem stop
+
+update-rc.d <service> defaults
+update-rc.d <service> start 20 3 4 5
+update-rc.d -f <service>  remove
+#chkconfig --add mysystem
+#chkconfig --del mysystem
+```
+
+### SVN服务器：
+```Bash
+sudo svnserve -d --foreground -r /opt/svn   #Bash
+```
+
+### openvpn
+```Bash
+sudo apt-get install openvpn
+sudo openvpn --config /path/to/config.ovpn
+```
+
+### tinyproxy
+```Bash
+sudo apt-get install tinyproxy
+#config /etc/tinyproxy.conf
+sudo iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+
+service tinyproxy <start|stop|restart|status>
+```
+
+### [mysql server](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04 "How To Install MySQL on Ubuntu 14.04")
+```Bash
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo mysql_secure_installation
+sudo mysql_install_db
+
+sudo service mysql <start|stop|restart|status>
 ```

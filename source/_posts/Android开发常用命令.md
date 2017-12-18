@@ -1,6 +1,6 @@
 ---
 title: Android开发常用命令
-date: 2017-04-29 20:24:54
+date: 2017-12-18 20:24:54
 tags:
   - Android
   - 命令
@@ -74,4 +74,65 @@ sdkman.show.update.only=true
 sdkman.ask.adb.restart=false
 sdkman.force.http=true
 sdkman.show.updateonly=true
+```
+
+### AOSP下载代码
+```Bash
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+```
+```shell
+#AOSP download command
+#https://source.android.com/source/downloading
+repo init -u https://android.googlesource.com/platform/manifest
+repo init -u https://android.googlesource.com/platform/manifest -b android-7.1.2_r6
+
+#lineageos download command
+#https://wiki.lineageos.org/devices/bacon/build#download-the-source-code
+cd ~/android/lineage
+repo init -u https://github.com/LineageOS/android.git -b cm-14.1
+```
+
+```Bash
+repo sync -c -d -j2 --no-tags
+```
+
+
+## 危险操作
+### 更新framework:
+```
+adb root
+adb remount
+
+adb push services.jar /system/framework
+adb push framework.jar /system/framework
+adb push framework-res.apk /system/framework
+
+adb push arm/boot.oat /system/framework/arm
+adb push arm/boot.art /system/framework/arm
+adb push arm/boot-framework.oat /system/framework/arm
+adb push arm/boot-framework.art /system/framework/arm
+
+adb push arm64/boot.oat /system/framework/arm64
+adb push arm64/boot.art /system/framework/arm64
+adb push arm64/boot-framework.oat /system/framework/arm64
+adb push arm64/boot-framework.art /system/framework/arm64
+
+pause
+adb reboot
+```
+### 更新SystemUI
+```
+echo off
+echo YES | copy \\ip\&lt;branch1&gt;\out\target\product\&lt;product&gt;\system\priv-app\SystemUI\SystemUI.apk .
+md5sum SystemUI.apk
+adb push SystemUI.apk /system/priv-app/SystemUI/SystemUI.apk
+adb shell am force-stop com.android.systemui
+echo on
+```
+
+### 编译framework:
+```
+mmm core/res && mm && mmm services && mm
+mmm -B core/res && mm -B && mmm -B services && mm -B
 ```
