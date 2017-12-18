@@ -21,6 +21,8 @@ lrwxrwxrwx  1 root root     4 Feb 20 00:49 /dev/ram -> ram1
 brw-rw----  1 root disk 1,  0 Apr 27 11:44 /dev/ram0
 brw-rw----  1 root disk 1,  1 Feb 20 00:49 /dev/ram1
 ```
+<!-- more -->
+
 创建一个目录
 ```Bash
 # mkdir /mnt/testRamDisk
