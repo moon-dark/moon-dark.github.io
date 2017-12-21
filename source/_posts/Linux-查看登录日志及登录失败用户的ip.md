@@ -5,19 +5,19 @@ tags:
   - code
 ---
 ### Linux 查看登录成功的用户信息
-命令: ```last```
+命令: **last**
 
 ### 最新的登录记录在最前面，所以可以用 一下命令来查看。
 
-命令: ```last | less```
+命令: **last | less**
 
 ### 查看登录失败的用户信息
 
-命令: ```lastb```
+命令: **lastb**
 
 ### 查看登录日志
 
-命令:  ```tail /var/log/secure```
+命令:  **tail /var/log/secure**
 
 <!-- more -->
 

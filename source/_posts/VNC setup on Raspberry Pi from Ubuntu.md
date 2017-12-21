@@ -12,7 +12,9 @@ http://mitchtech.net/vnc-setup-on-raspberry-pi-from-ubuntu/
 
 通过SSH连接：
 
-```ssh pi@192.168.0.112```
+```
+ssh pi@192.168.0.112
+```
 
 默认用户名pi, 默认密码‘raspberry’
 

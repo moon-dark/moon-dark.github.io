@@ -7,7 +7,7 @@ tags:
   - code
 ---
 
-```export default```命令，为模块指定默认输出
+**export default** 命令，为模块指定默认输出
 ```Javascript
 // export-default.js
 export default function () {
@@ -25,7 +25,7 @@ customName(); // 'foo'
 
 <!-- more -->
 
-```export default```命令用在非匿名函数前，也是可以的。
+**export default** 命令用在非匿名函数前，也是可以的。
 ```javascript
 // export-default.js
 export default function foo() {
@@ -77,7 +77,7 @@ import { default as foo } from 'modules';
 // import foo from 'modules';
 ```
 
-正是因为```export default```命令其实只是输出一个叫做default的变量，所以它后面不能跟变量声明语句。
+正是因为**export default**命令其实只是输出一个叫做default的变量，所以它后面不能跟变量声明语句。
 ```javascript
 // 正确
 export var a = 1;

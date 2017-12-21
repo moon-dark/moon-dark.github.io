@@ -6,7 +6,7 @@ tags:
   - code
 ---
 
-vue-cnode是一个单页应用，源码地址：```https://github.com/wszgxa/vue-cnode```，我fork了一份到：```https://github.com/Humilton/vue-cnode/```,让我们从运行开始。
+vue-cnode是一个单页应用，源码地址：[vue-node](https://github.com/wszgxa/vue-cnode)，我fork了一份到：[vue-node](https://github.com/Humilton/vue-cnode/),让我们从运行开始。
 
 ### 运行
 首先要有NodeJS：各个系统版本从http://nodejs.io/下载。我是下载过的，所以直接升级：
@@ -24,7 +24,7 @@ C:\Users\Hamilton>npm -v
 npm install -g vue-cli
 ```
 
-```npm install```安装依赖：
+**npm install安装依赖：**
 ```
 E:\Humilton\vue-cnode>git remote -v
 origin  https://github.com/Humilton/vue-cnode/ (fetch)
@@ -40,7 +40,7 @@ added 814 packages in 170.865s
 
 ```
 
-```npm run dev```执行:
+**npm run dev执行:**
 ```
 E:\Humilton\vue-cnode>npm run dev
 

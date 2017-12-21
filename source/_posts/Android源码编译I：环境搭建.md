@@ -39,30 +39,40 @@ VirtualBox：
 
 5）配置SSH服务：Terminal下执行
 
-```sudo apt-get install openssh-server
-service ssh restart```
+```
+sudo apt-get install openssh-server
+service ssh restart
+```
 
-**2、配置源码环境：**参考http://source.android.com/source/initializing.html
+**2、配置源码环境：** 参考http://source.android.com/source/initializing.html
 
 Git bash登录Ubuntu：
 
-```ssh 用户名@localhost```
+```
+ssh 用户名@localhost
+```
 
 1）安装JDK：
 
-```$ sudo apt-get update
-$ sudo apt-get install openjdk-8-jdk```
+```
+$ sudo apt-get update
+$ sudo apt-get install openjdk-8-jdk
+```
 
 2）安装编译依赖包：
 
-```$ sudo apt-get install git-core gnupg flex bison gperf build-essential \
+```
+$ sudo apt-get install git-core gnupg flex bison gperf build-essential \
 zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache \
-libgl1-mesa-dev libxml2-utils xsltproc unzip```
+libgl1-mesa-dev libxml2-utils xsltproc unzip
+```
 
 3）配置Host文件：
 
-```vim /etc/hosts```
+```
+vim /etc/hosts
+```
 
 ，增加以下内容：
 
