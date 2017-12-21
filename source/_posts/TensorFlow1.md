@@ -5,6 +5,7 @@ tags:
   - code
   - 机器学习
 ---
+
 ### [TensorFlow](https://www.tensorflow.org/)
 ### [TensorFlow 官方文档中文版](http://wiki.jikexueyuan.com/project/tensorflow-zh/)
 ##### An open-source software library for Machine Intelligence
@@ -16,7 +17,7 @@ MacOS X 10.11 (El Capitan) or later.
 Ubuntu 14.04 or later
 Windows 7 or later.
 ```
-### [在Ubuntu上安装TensorFlow](https://www.tensorflow.org/install/install_linux)
+
 版本选择：<br/>
 只支持CPU：系统没有英伟达GPU（NVIDIA® GPU），只能安装这个版本。<br/>
 支持GPU： TensorFlow程序在GPU上比CPU上执行更快。所以如果你有符合要求的NVIDIA® GPU，你应该安装这个版本。
@@ -30,7 +31,10 @@ GPU card with CUDA Compute Capability 3.0 or higher.
 The libcupti-dev library：
 ```
 [NVIDIA's documentation](http://docs.nvidia.com/cuda/cuda-installation-guide-linux/#axzz4VZnqTJ2A)<br/>
-The libcupti-dev library安装```$ sudo apt-get install libcupti-dev```
+The libcupti-dev library安装
+```
+$ sudo apt-get install libcupti-dev
+```
 
 ##### 选择安装机制
 ```
