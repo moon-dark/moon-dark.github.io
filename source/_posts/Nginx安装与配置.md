@@ -2,8 +2,8 @@
 title: Nginx安装与配置
 date: 2017-12-22 09:45:40
 tags:
-  -- code
-  -- Nginx
+  - code
+  - Nginx
 ---
 
 ### 安装
