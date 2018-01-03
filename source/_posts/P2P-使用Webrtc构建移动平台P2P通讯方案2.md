@@ -3,10 +3,41 @@ title: '使用Webrtc构建移动平台P2P通讯方案: 信令服务端(Signaling
 date: 2018-01-02 14:25:38
 tags:
   - code
+  - webrtc
 ---
 
-### [Realtime communication with WebRTC](https://codelabs.developers.google.com/codelabs/webrtc-web/)
-Gitbub工程[webrtc-web](https://github.com/googlecodelabs/webrtc-web/)
+Socket.IO 是一个面向实时 web 应用的 JavaScript 库。它使得服务器和客户端之间实时双向的通信成为可能。他有两个部分：在浏览器中运行的客户端库，和一个面向Node.js的服务端库。两者有着几乎一样的API。像Node.js一样，它也是事件驱动的.
+
+Socket.IO 主要使用WebSocket协议。但是如果需要的话，Socket.io可以回退到几种其它方法，例如Adobe Flash Sockets，JSONP拉取，或是传统的AJAX拉取，并且在同时提供完全相同的接口。尽管它可以被用作WebSocket的包装库，它还是提供了许多其它功能，比如广播至多个套接字，存储与不同客户有关的数据，和异步IO操作。
+
+**socket.io**  [链接](https://github.com/socketio/socket.io)<br>
+socket.io支持Java，C++，Swift语言<br>
+
+- 跨平台支持：
+![](https://camo.githubusercontent.com/fface5a8523859ace9b349fc8922af0a8d6941f4/68747470733a2f2f73617563656c6162732e636f6d2f62726f777365722d6d61747269782f736f636b65742e737667)
+
+- 安装：
+```
+npm install socket.io --save
+```
+
+- 使用：
+```
+var server = require('http').createServer();
+var io = require('socket.io')(server);
+io.on('connection', function(client){
+  client.on('event', function(data){});
+  client.on('disconnect', function(){});
+});
+server.listen(3000);
+```
+
+### 文档
+- [Realtime communication with WebRTC](https://codelabs.developers.google.com/codelabs/webrtc-web/)
+- [webrtc-web](https://github.com/googlecodelabs/webrtc-web/)
+- [官方网站](https://socket.io/)
+
+<!-- more -->
 
 **初始化**
 ```
@@ -17,7 +48,7 @@ npm i socket.io
 npm i node-static
 npm i os
 ```
-<!-- more -->
+
 **代码server.js**
 ```javascript
 'use strict';

@@ -4,7 +4,19 @@ date: 2018-01-02 16:38:49
 tags:
   - code
 ---
-### 初始化
+### Java原生实现，从JCenter获取官方预编译库
+[WebRTC > Native code > Android](https://webrtc.org/native-code/android/)<br>
+Android Studio 3增加依赖：
+```
+implementation 'org.webrtc:google-webrtc:1.0.+'
+```
+Android Studio 2增加依赖：
+```
+compile 'org.webrtc:google-webrtc:1.0.+'
+```
+
+### Webview通讯实现
+##### 初始化
 ```java
 protected void init() {
     super.init();
@@ -35,7 +47,7 @@ private void init() {
 
 ```
 <!-- more -->
-### 导出导入
+##### 导出导入
 ```java
 // 文件选择
 public class SyncWebChromeClient extends WebChromeClient {

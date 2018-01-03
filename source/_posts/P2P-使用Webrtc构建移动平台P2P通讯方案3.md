@@ -3,10 +3,29 @@ title: '使用Webrtc构建移动平台P2P通讯方案：WebRTC文件传输'
 date: 2018-01-02 15:38:36
 tags:
   - code
+  - webrtc
 ---
-# [WebRTC code samples](https://github.com/webrtc/samples)
-[WebRTC samples Transfer a file](https://webrtc.github.io/samples/src/content/datachannel/filetransfer/)
-### [WebRTC data channels](https://www.html5rocks.com/en/tutorials/webrtc/datachannels/)
+
+WebRTC，名称源自网页即时通信（英语：Web Real-Time Communication）的缩写，是一个支持网页浏览器进行实时语音对话或视频对话的API。它于2011年6月1日开源并在Google、Mozilla、Opera支持下被纳入万维网联盟的W3C推荐标准。
+
+下面是一个 WebRTC 的架构，显示了 RTCPeerConnection 的作用:
+![](https://raw.githubusercontent.com/RWebRTC/Blog/pictures/pictures/webrtcArchitecture.png)
+从 JavaScript 观点看，从图表中主要需要理解 RTCPeerConnection 向开发者屏蔽了底层复杂的东西。WebRTC 使用的协议和解码器做了大量的工作才使得实时通信成为了可能，甚至在不可靠的网络的情况下：
+
+- 数据包丢包隐藏
+- 回声消除
+- 宽带自适应
+- 动态抖动缓冲
+- TODO 自动增益控制
+- 降噪
+- 图片清除
+
+### 文档
+- [WebRTC 的前世今生](https://blog.coding.net/blog/getting-started-with-webrtc)
+- [WebRTC code samples](https://github.com/webrtc/samples)
+- [WebRTC samples Transfer a file](https://webrtc.github.io/samples/src/content/datachannel/filetransfer/)
+- [WebRTC data channels](https://www.html5rocks.com/en/tutorials/webrtc/datachannels/)
+- [官方网站](https://webrtc.org/)
 
 ### **初始化**
 ```
