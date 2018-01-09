@@ -15,7 +15,7 @@ socket.io支持Java，C++，Swift语言<br>
 
 - 跨平台支持：
 ![](https://camo.githubusercontent.com/fface5a8523859ace9b349fc8922af0a8d6941f4/68747470733a2f2f73617563656c6162732e636f6d2f62726f777365722d6d61747269782f736f636b65742e737667)
-
+<!-- more -->
 - 安装：
 ```
 npm install socket.io --save
@@ -37,7 +37,6 @@ server.listen(3000);
 - [webrtc-web](https://github.com/googlecodelabs/webrtc-web/)
 - [官方网站](https://socket.io/)
 
-<!-- more -->
 
 **初始化**
 ```

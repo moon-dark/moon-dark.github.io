@@ -20,12 +20,14 @@ WebRTC，名称源自网页即时通信（英语：Web Real-Time Communication�
 - 降噪
 - 图片清除
 
+<!-- more -->
 ### 文档
 - [WebRTC 的前世今生](https://blog.coding.net/blog/getting-started-with-webrtc)
 - [WebRTC code samples](https://github.com/webrtc/samples)
 - [WebRTC samples Transfer a file](https://webrtc.github.io/samples/src/content/datachannel/filetransfer/)
 - [WebRTC data channels](https://www.html5rocks.com/en/tutorials/webrtc/datachannels/)
 - [官方网站](https://webrtc.org/)
+- [[译]JavaScript文件操作(5)-Blob类型（二进制大对象）](http://www.iunbug.com/archives/2012/06/06/273.html)
 
 ### **初始化**
 ```
@@ -50,7 +52,7 @@ var dcctrl = {  // datachannel control
   prevTime: 0
 }
 ```
-<!-- more -->
+
 **连接信令服务器**
 ```javascript
 loginWS () {
@@ -315,13 +317,6 @@ sendFile (file) {
     }
     reader.readAsArrayBuffer(file)
   }
-},
-saveToDisk (fileUrl, fileName) {
-  var save = document.createElement('a')
-  save.href = fileUrl
-  save.target = '_blank'
-  save.download = fileName || fileUrl
-  save.click()
 },
 webrtc.renderPhoto = function (data) {
   console.log('renderPhoto: !!!')
