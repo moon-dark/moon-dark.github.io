@@ -5,25 +5,50 @@ tags:
   - code
   - android
 ---
-#### Android使用源码库Hide函数进行译：
-- 1、找到那些被隐藏起来的类、它们在以下两个位置：<br>
-A、out\target\common\obj\JAVA_LIBRARIES\framework_intermediates/classes.jar ；<br>
-B、out\target\common\obj\JAVA_LIBRARIES\android-common_intermediates\classes.jar ；<br>
-将找到的.jar文件，在Eclipse中作为User Library 添加到 Project 的Librarys依赖中，并将该库的顺序置于Android SDK Library之上。<br>
+## Android使用源码库Hide函数进行译：
+- 1、找到那些被隐藏起来的类、它们在以下两个位置：
+A、out\target\common\obj\JAVA_LIBRARIES\framework_intermediates/classes.jar ；
+B、out\target\common\obj\JAVA_LIBRARIES\android-common_intermediates\classes.jar ；
+将找到的.jar文件，在Eclipse中作为User Library 添加到 Project 的Librarys依赖中，并将该库的顺序置于Android SDK Library之上。
 在 out\target\common\obj\JAVA_LIBRARIES\ 目录下，还有很多其它具体应用相关的jar包，.... ；
 
-- 2、找到那些缺失的、编译时才生成的，.java源文件，它们通常在以下位置：<br>
-A、 out\target\common\obj\JAVA_LIBRARIES\XXX_intermediates\src 目录下，XXX是相关模块的名称；<br>
-B、out\target\common\obj\APPS\XXX_intermediates\src 目录下；<br>
-将找到的src目录，在Eclipse下，以Link Source的方式，连接到Project 中作为源码的一部分。<br>
+- 2、找到那些缺失的、编译时才生成的，.java源文件，它们通常在以下位置：
+A、 out\target\common\obj\JAVA_LIBRARIES\XXX_intermediates\src 目录下，XXX是相关模块的名称；
+B、out\target\common\obj\APPS\XXX_intermediates\src 目录下；
+将找到的src目录，在Eclipse下，以Link Source的方式，连接到Project 中作为源码的一部分。
+
+## 事件处理机制
+- 一个点击事件产生后，传递顺序是：Activity（Window） -> ViewGroup -> View
+- dispatchTouchEvent() 、onInterceptTouchEvent()和onTouchEvent()
+- requestDisallowInterceptTouchEvent : 参数true阻止View截获touch事件
+
 <!-- more -->
-#### 字符串连接：(数据绑定)
+
+### 获取Window宽高
+```
+WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+Display display = wm.getDefaultDisplay();
+Point size = new Point();
+display.getSize(size);
+```
+
+### Recyclerview展开不滑动
+```
+NestedScrollView and setNestedScrollingEnabled(false)
+```
+或
+```
+RecyclerView recycler = (RecyclerView) findViewById(R.id.recycler);
+recycler.setNestedScrollingEnabled(false);
+```
+
+## 字符串连接：(数据绑定)
 concate it with **grave accent (`)**
 ```
 android:text="@{`Hello ` + user.firstName}"/>
 ```
 
-#### OQL
+## OQL
 ```
 select * from instanceof android.support.v4.app.Fragment
 select * from instanceof android.os.Handler
@@ -31,7 +56,7 @@ select * from instanceof java.lang.Thread
 select * from instanceof  android.view.View
 ```
 
-#### find current activity name in activity stack.
+## find current activity name in activity stack.
 ```
 adb shell dumpsys activity
 
@@ -39,7 +64,7 @@ adb shell dumpsys activity
 adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
 ```
 
-#### [灰度图片](http://www.curious-creature.com/2009/05/02/drawable-mutations/)
+## [灰度图片](http://www.curious-creature.com/2009/05/02/drawable-mutations/)
 ```
 ColorMatrix matrix = new ColorMatrix();
 matrix.setSaturation( 0);
@@ -48,7 +73,7 @@ filter = new ColorMatrixColorFilter(matrix) ;
 img.getDrawable().mutate().setColorFilter(isFull ? filter : null );
 ```
 
-#### 获得图片(eg:圆角图片)
+## 获得图片(eg:圆角图片)
 ```
 Bitmap mRes = BitmapFactory.decodeResource(getResources(), R.drawable.experience_card) ;
 mRes = BitmapIncise.getRoundedCornerBitmap (mRes, radiusCallback.getRoundPx());
@@ -79,14 +104,14 @@ public static Bitmap getRoundedCornerBitmap(Bitmap bitmap , float roundPx) {
 }
 ```
 
-#### Android日志
+## Android日志
 ```
 Log. i("==>", Log.getStackTraceString(new Exception())) ;
 // or
 new Exception().printStackTrace();
 ```
 
-#### [fix控件GridView滚动到底部](https://stackoverflow.com/questions/25357568/how-to-preven-the-gridview-scroll-by-default-once-dataset-changed)
+## [fix控件GridView滚动到底部](https://stackoverflow.com/questions/25357568/how-to-preven-the-gridview-scroll-by-default-once-dataset-changed)
 Issue:
 ```
 GridView is being scrolled automatically.
@@ -133,7 +158,7 @@ RelativeLayout rlContainer = (RelativeLayout) findViewById(R.id.rlContainer);
 rlContainer.requestFocus();
 ```
 
-#### [Run java on Android](https://stackoverflow.com/questions/10199863/how-to-execute-the-dex-file-in-android-with-command)
+## [Run java on Android](https://stackoverflow.com/questions/10199863/how-to-execute-the-dex-file-in-android-with-command)
 Let's say you have a the following code in file HelloWorld.java:
 ```java
 public class HelloWorld {
@@ -188,31 +213,24 @@ public class FreeDisk {
 }
 ```
 
-#### [Android指向Resource的URI](http://www.blogjava.net/anchor110/articles/338601.html)
+## [Android指向Resource的URI](http://www.blogjava.net/anchor110/articles/338601.html)
 A Uri object can be used to reference a resource in an APK file. The Uri should be one of the following formats:
 
 - **android.resource://package_name/id_number**
-
   ``package_name`` is your package name as listed in your AndroidManifest.xml. For example com.example.myapp
-
   ``id_number`` is the int form of the ID.
-
   The easiest way to construct this form is
 ``Uri uri = Uri.parse("android.resource://com.example.myapp/" + R.raw.my_resource");``
 
 - **android.resource://package_name/type/name**
-
   ``package_name`` is your package name as listed in your AndroidManifest.xml. For example com.example.myapp
-
   ``type`` is the string form of the resource type. For example, raw or drawable.
   ``name`` is the string form of the resource name.
-
   That is, whatever the file name was in your res directory, without the type extension.
-
    The easiest way to construct this form is
 ``Uri uri = Uri.parse("android.resource://com.example.myapp/raw/my_resource");``
 
-#### [Java虚拟机类型签名](http://trylovecatch.iteye.com/blog/1292570)
+## [Java虚拟机类型签名](http://trylovecatch.iteye.com/blog/1292570)
 表 3-2 Java虚拟机类型签名
 
 类型签名 | Java 类型
