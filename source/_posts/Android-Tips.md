@@ -5,6 +5,37 @@ tags:
   - code
   - android
 ---
+
+## 安装 lineageos，导致微信，网易崩溃
+编辑``/system/build.prop``
+```
+#ddalvik.vm.heapstartsize=8m
+#dalvik.vm.heapgrowthlimit=288m
+#dalvik.vm.heapsize=768m
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapgrowthlimit=320m
+dalvik.vm.heapsize=512m
+```
+- dalvik.vm.heapstartsize            
+     堆分配的初始大小，调整这个值会影响到应用的流畅性和整体ram消耗。这个值越小，系统ram消耗越慢，但是由于初始值较小，一些较大的应用需要扩张这个堆，从而引发gc和堆调整的策略，会应用反应更慢。相反，这个值越大系统ram消耗越快，但是程序更流畅。
+- dalvik.vm.heapgrowthlimit       
+     受控情况下的极限堆（仅仅针对dalvik堆，不包括native堆）大小，dvm heap是可增长的，但是正常情况下dvm heap的大小是不会超过dalvik.vm.heapgrowthlimit的值（非正常情况下面会详细说明）。这个值控制那些受控应用的极限堆大小，如果受控的应用dvm heap size超过该值，则将引发oom（out of memory）。
+- dalvik.vm.heapsize
+    不受控情况下的极限堆大小，这个就是堆的最大值。不管它是不是受控的。这个值会影响非受控应用的dalvik heap size。一旦dalvik heap size超过这个值，直接引发oom。
+
+<!-- more -->
+
+## GreenDao： not like
+```
+builder.where(new StringCondition(String.format("%s not like %s", UsersDao.Properties.Name.columnName, "'%" + value + "'")));
+```
+
+## zxing
+使用TRY_HARDER 提高二维码识别成功率
+```
+hints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
+```
+
 ## Android使用源码库Hide函数进行译：
 - 1、找到那些被隐藏起来的类、它们在以下两个位置：
 A、out\target\common\obj\JAVA_LIBRARIES\framework_intermediates/classes.jar ；
@@ -21,8 +52,6 @@ B、out\target\common\obj\APPS\XXX_intermediates\src 目录下；
 - 一个点击事件产生后，传递顺序是：Activity（Window） -> ViewGroup -> View
 - dispatchTouchEvent() 、onInterceptTouchEvent()和onTouchEvent()
 - requestDisallowInterceptTouchEvent : 参数true阻止View截获touch事件
-
-<!-- more -->
 
 ### 获取Window宽高
 ```

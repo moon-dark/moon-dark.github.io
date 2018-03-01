@@ -19,6 +19,37 @@ man bash查找Readline Key Bindings一节来看看bash的默认热键
 使用 mtr 会比使用 traceroute 要更容易定位一个网络问题。
 ```
 
+查看占用进程端口的PID
+```
+sudo ss -lptn 'sport = :80'
+```
+
+crontab的文件格式
+```
+分 时 日 月 星期 要运行的命令
+
+第1列分钟0～59
+第2列小时0～23（0表示子夜）
+第3列日1～31
+第4列月1～12
+第5列星期0～7（0和7表示星期天）
+第6列要运行的命令
+
+# 查看日志：tail -f /var/log/cron
+```
+
+certbot
+```
+./certbot-auto certonly --agree-tos --standalone --email xxx@gmail.com -d www.???.com,m.???.com
+./certbot-auto certonly --agree-tos --webroot --email xxx@gmail.com -d www.???.com,m.???.com
+./certbot-auto certonly --agree-tos --webroot --force-renew --email xxx@gmail.com -d www.???.com,m.???.com
+/root/certbot-auto renew --force-renew
+```
+certbot使用crontab更新letsencrypt证书
+```
+* * 15 * * /root/certbot-auto renew --force-renew
+```
+
 Linux查看文件夹大小du -sh 查看当前文件夹大小
 ```
 du -sh * | sort -n #统计当前文件夹(目录)大小，并按文件大小排序
