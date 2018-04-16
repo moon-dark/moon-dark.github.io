@@ -17,6 +17,8 @@ Ctrl-U : 删除一行
 cd – : 回到上一次的工作目录
 man bash查找Readline Key Bindings一节来看看bash的默认热键
 使用 mtr 会比使用 traceroute 要更容易定位一个网络问题。
+
+pip install 'requests[security]'  # pip : SNIMissingWarning, InsecurePlatformWarning
 ```
 
 查看占用进程端口的PID
