@@ -6,6 +6,14 @@ tags:
   - android
 ---
 
+## 查看包目录
+```
+adb shell
+run-as yourappPackageName
+cd /data/data/youappPackageName
+ls -all
+```
+
 ## 安装 lineageos，导致微信，网易崩溃
 编辑``/system/build.prop``
 ```

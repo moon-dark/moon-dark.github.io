@@ -6,16 +6,16 @@ tags:
   - linux
   - server
 ---
-![](https://habilisbest.com/uploads/rpi-redis/1.jpeg)
+![](/img/rpi-redis.jpeg)
 
-![Installing Redis on a Raspberry Pi for caching](https://habilisbest.com/install-redis-on-your-raspberrypi)
+[Installing Redis on a Raspberry Pi for caching](https://habilisbest.com/install-redis-on-your-raspberrypi)
 ***
 If you want to configure caching to speed up web apps you may want to run on your Raspberry Pi. Or, it could be that some web apps, even require caching for their stable operation.
 
 Whatever the case may be, caching could be a life saver, when installed and configured properly.
 
 In this article, I will show how I install Redis on my Raspberry Pis. First of all, we need to download the latest stable release of Redis.
-
+<!-- more -->
 Prepare to download Redis source and build it on your Raspberry Pi. It may sound spooky complicated, but it's just as simple as running 3 Linux bash commands.
 
 ```

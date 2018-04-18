@@ -13,6 +13,8 @@ By using the RPM command we can query a package to find all of its associated co
 
 ### RPM Query Configuration Files
 The options we will use with the RPM command are -q to query a package, and -c which will list the configuration files that are part of the package. As shown below we have run RPM with the -qc options on the httpd package, which is where Apache comes from in CentOS.
+
+<!-- more --> 
 ```
 [root@centos7 ~]# rpm -qc httpd
 /etc/httpd/conf.d/autoindex.conf

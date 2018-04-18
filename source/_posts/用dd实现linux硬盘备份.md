@@ -29,7 +29,7 @@ dd if=/dev/sda | gzip > disk.img.gz
 dd if=/dev/sda | bzip2 > disk.img.bz2
 ```
 不错吧！ghost的功能都有了。
-
+<!-- more -->
 ### 2. 分区克隆
 
 如果我们不想克隆整块磁盘，只想把某些存放数据的分区备份一下，你会需要克隆一个分区。正如预备知识所述，分区在linux下也是一个文件。例如
