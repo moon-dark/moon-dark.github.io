@@ -3,7 +3,7 @@ title: Android 刷机常用命令
 tags:
   - Android
   - 刷机
-  - 命令
+  - shell
   - code
 date: 2017-04-29 20:34:06
 ---

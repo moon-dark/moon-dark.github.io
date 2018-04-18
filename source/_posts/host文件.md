@@ -3,6 +3,7 @@ title: host文件
 date: 2017-11-01 23:06:49
 tags:
   - wall
+  - proxy
 ---
 
 ### Windows

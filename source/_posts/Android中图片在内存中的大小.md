@@ -2,7 +2,7 @@
 title: Android中图片在内存中的大小
 tags:
   - Android
-  - 内存
+  - calc
   - code
 date: 2017-02-21 11:54:52
 ---

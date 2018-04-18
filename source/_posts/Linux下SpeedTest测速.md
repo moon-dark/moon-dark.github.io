@@ -3,7 +3,7 @@ title: Linux下SpeedTest测速
 tags:
   - Linux
   - 测速
-  - 命令
+  - shell
   - code
 date: 2017-06-07 17:25:21
 ---

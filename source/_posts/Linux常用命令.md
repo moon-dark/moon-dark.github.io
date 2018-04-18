@@ -7,6 +7,13 @@ tags:
 date: 2017-04-29 20:43:27
 ---
 
+Panel : Config reset
+```
+# This worked for me in GNOME Classic on 12.04 to reset the gnome-panel configuration:
+dconf reset -f /org/gnome/gnome-panel/
+killall gnome-panel
+```
+
 Linux常用命令
 
 * * *
@@ -44,6 +51,8 @@ certbot
 ./certbot-auto certonly --agree-tos --webroot --email xxx@gmail.com -d www.???.com,m.???.com
 ./certbot-auto certonly --agree-tos --webroot --force-renew --email xxx@gmail.com -d www.???.com,m.???.com
 /root/certbot-auto renew --force-renew
+
+/root/certbot-auto certonly -w /etc/letsencrypt/ --webroot --agree-tos --expand -d test.domain.com
 ```
 certbot使用crontab更新letsencrypt证书
 ```

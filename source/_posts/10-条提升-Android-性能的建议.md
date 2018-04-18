@@ -3,6 +3,7 @@ title: 10 条提升 Android 性能的建议
 date: 2018-01-16 14:46:24
 tags:
   - code
+  - Android
 ---
 # [10 条提升 Android 性能的建议](https://academy.realm.io/cn/posts/droidcon-farber-improving-android-app-performance/)
 

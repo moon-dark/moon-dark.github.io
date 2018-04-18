@@ -1,8 +1,8 @@
 ---
 title: git命令
 tags:
-  - git
-  - 命令
+  - shell
+  - 版本控制
   - code
 date: 2017-06-16 18:02:11
 ---
