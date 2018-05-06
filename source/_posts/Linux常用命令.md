@@ -28,6 +28,11 @@ man bash查找Readline Key Bindings一节来看看bash的默认热键
 pip install 'requests[security]'  # pip : SNIMissingWarning, InsecurePlatformWarning
 ```
 
+Cleaning the ccache
+```
+ Compiling code in Linux will will produce a .ccache folder in the users home directory, used by the program ccache.  Often times this folder can grow to be quite large and should be regularly cleaned.  To clean the ccache issue the following command to instruct ccache to clean its cache.
+$ ccache -C
+```
 查看占用进程端口的PID
 ```
 sudo ss -lptn 'sport = :80'
@@ -64,6 +69,7 @@ certbot使用crontab更新letsencrypt证书
 Linux查看文件夹大小du -sh 查看当前文件夹大小
 ```
 du -sh * | sort -n #统计当前文件夹(目录)大小，并按文件大小排序
+du -sch .[!.]* * |sort -h  #统计当前文件夹(目录)大小，并按文件大小排序, 包括隐藏目录
 ```
 
 Notepad++中用正则表达式匹配中文 通常正则表达式匹配中文可以利用Unicode的特点，使用[\u4e00-\u9fa5]匹配。但在Notepad++中不能正常使用。 解决方法是，首先将编码转换成Unicode（菜单-&gt;格式-&gt;转换为UTF-8，如果不转换可能匹配出错），然后使用[\x{4e00}-\x{9fa5}]就可以实现匹配中文了。
