@@ -11,9 +11,9 @@ menu:
 # SubNav
 subnav:
   github: "https://github.com/Humilton"
-  weibo: "#"
+  #weibo: "#"
   rss: "/atom.xml"
-  zhihu: "#"
+  #zhihu: "#"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -21,10 +21,10 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "mailto:d63hbz@gmail.com"
   #facebook: "#"
-  #google: "#"
-  #twitter: "#"
+  google: "https://plus.google.com/104855259267860359705"
+  twitter: "https://twitter.com/d63hbz"
   #linkedin: "#"
 
 rss: /atom.xml
@@ -47,11 +47,11 @@ open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 0
+reward_type: 2
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay:
+alipay: /assets/img/alipay.jpg
 # 微信二维码图片地址
 weixin:
 
@@ -68,7 +68,7 @@ top: true
 
 # Miscellaneous
 baidu_analytics: ''
-google_analytics: ''
+google_analytics: 'UA-34519326-1'
 favicon: /avatar.png
 
 #你的头像url
@@ -124,11 +124,9 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+    我的Web: https://web.yaoping.win/
+    Youtube下载: https://vid.yaoping.win/
+    史记: https://read.yaoping.win/
+    平凡的世界: https://read.yaoping.win/index1.html
 
 aboutme: 中国式码农<BR><BR>关注代码，关注科技<BR>关注墙，关注美
