@@ -7,6 +7,19 @@ tags:
 date: 2017-04-29 20:43:27
 ---
 
+To unrar files with... unrar:
+```
+sudo apt-get install unrar-free
+unrar e some.rar
+```
+
+To extract rar files with 7-zip:
+```
+sudo apt-get install p7zip-full
+7z x some.rar
+```
+e and x mean extract obviously.
+
 Panel : Config reset
 ```
 # This worked for me in GNOME Classic on 12.04 to reset the gnome-panel configuration:
