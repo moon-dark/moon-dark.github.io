@@ -6,6 +6,12 @@ tags:
   - code
 date: 2017-04-29 20:43:27
 ---
+app-last.apk指向最新的文件
+```
+[root@iZuf65bu4ubtj00dz46ge7Z html]# cat makeLast.sh
+rm app-last.apk
+ln -s `ls -rt *.apk | tail -n1` app-last.apk
+```
 
 To unrar files with... unrar:
 ```

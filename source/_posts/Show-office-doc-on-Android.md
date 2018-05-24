@@ -4,6 +4,7 @@ date: 2018-02-08 21:35:04
 tags:
  - Android
  - code
+ - Google
 ---
 
 # 可用的解决方案：
@@ -204,3 +205,31 @@ server {
 }
 
 ```
+
+### 使用Docker快速布置
+下载docker镜像：
+```
+docker pull humilton/nginx-google-proxy
+```
+
+下载源码：
+```
+$ git clone https://github.com/humilton/docker-nginx-google-proxy.git
+$ cd docker-nginx-google-proxy
+```
+
+编辑 nginx.conf，配置自己的域名：
+```
+# vi nginx.conf
+use command :s/web.yaoping.win/<your domain replace google.com>/g
+use command :s/w.yaoping.win/<your domain replace docs.google.com>/g
+use command :s/api.yaoping.win/<your domain replace apis.google.com>/g
+```
+
+使用docker-compose挂载nginx.conf, 执行docker:
+```
+$ docker-compose up   # run `docker-compose up -d` for run as daemon
+$ docker-compose down  # shutdown docker
+```
+
+nginx服务映射到当钱服务的8081端口。
