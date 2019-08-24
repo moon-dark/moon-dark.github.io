@@ -25,3 +25,13 @@ sudo apt-get install tightvncserver
 连接VNC：vncviewer 192.168.0.112:5901
 停止VNC：vncserver -kill :1
 ```
+
+关于'could not acquire name on session bus'：
+参考https://github.com/TurboVNC/turbovnc/issues/86
+
+配置~/.vnc/xstartup文件，增加：
+```
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+exec /usr/bin/mate-session
+```
