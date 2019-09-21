@@ -7,14 +7,14 @@ title: Hamilton的博客
 subtitle: 以代码之复杂，让生活变简化
 description:  中国式码农，关注代码，关注科技，关注墙，关注美。
 author: 汉密尔顿
-email: goodmovie@mail.com
+email: win@isk.app
 keywords: "Android,命令,Linux,树莓派,网络,数据库,RasberryPI,server,spring,安全,nodejs,jsp,js,jquery,vue,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3"
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.yaoping.win
+url: https://kaiji.app
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
